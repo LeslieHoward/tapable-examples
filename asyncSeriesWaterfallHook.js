@@ -16,7 +16,7 @@ const hook = new Hook();
 hook.hooks.asyncSeriesWaterfallHook.tapAsync("hook1", (parameter, callback) => {
   setTimeout(() => {
     console.log("任务一", parameter);
-    callback(null, '任务二的参数');
+    callback(null, "任务二的参数");
   }, 2000);
 });
 hook.hooks.asyncSeriesWaterfallHook.tapAsync("hook2", (parameter, callback) => {
@@ -29,3 +29,10 @@ hook.hooks.asyncSeriesWaterfallHook.tapAsync("hook2", (parameter, callback) => {
 hook.start("启动", () => {
   console.log("结束");
 });
+
+/**
+ * 执行结果
+ * 1. 任务一 启动
+ * 2. 任务二 任务二的参数
+ * 3. 结束
+ */

@@ -26,3 +26,10 @@ hook.hooks.syncWaterfallHook.tap("hook3", (parameter) => {
 });
 
 hook.start("启动");
+
+/**
+ * 执行结果
+ * 任务一 启动
+ * 任务二 传给任务二的参数
+ * 任务三 传给任务三的参数
+ */

@@ -30,3 +30,9 @@ hook.hooks.asyncSeriesHook.tapAsync("hook2", (parameter, callback) => {
 hook.start("启动", () => {
   console.log("结束");
 });
+
+/**
+ * 执行结果
+ * 1. 任务一 启动
+ * 2. 结束
+ */

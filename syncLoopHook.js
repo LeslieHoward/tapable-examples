@@ -30,3 +30,13 @@ hook.hooks.syncLoopHook.tap("hook2", (parameter) => {
 });
 
 hook.start("启动");
+
+/**
+ * 执行结果
+ * 启动 1 次
+ * 启动 2 次
+ * 启动 3 次
+ * 启动 4 次
+ * 启动 5 次
+ * 启动 5 次
+ */

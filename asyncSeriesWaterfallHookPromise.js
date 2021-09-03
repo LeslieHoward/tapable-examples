@@ -33,3 +33,10 @@ hook.hooks.asyncSeriesWaterfallHook.tapPromise("hook2", (parameter) => {
 hook.start("启动", () => {
   console.log("结束");
 });
+
+/**
+ * 执行结果
+ * 1. 任务一 启动
+ * 2. 任务二 任务二的参数
+ * 3. 结束
+ */

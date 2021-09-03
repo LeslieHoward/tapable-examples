@@ -26,3 +26,9 @@ hook.hooks.syncBailHook.tap("hook3", (parameter) => {
 });
 
 hook.start("启动");
+
+/**
+ * 执行结果
+ * 1. 任务一 启动
+ * 2. 任务二 启动
+ */

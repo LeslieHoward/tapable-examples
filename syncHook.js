@@ -18,3 +18,8 @@ hook.hooks.syncHook.tap("hook1", (parameter) => {
 });
 
 hook.start("启动");
+
+/**
+ * 执行结果
+ * 1. 参数 启动
+ */
