@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const taps = [{ name: "A" }, { name: "B" }];
+
+      function insert(item) {
+        let before;
+        if (typeof item.before === "string") {
+          before = new Set([item.before]);
+        } else if (Array.isArray(item.before)) {
+          before = new Set(item.before);
+        }
+        let stage = 0;
+        if (typeof item.stage === "number") {
+          stage = item.stage;
+        }
+        let i = taps.length;
+        while (i > 0) {
+          i--;
+          const x = taps[i];
+          taps[i + 1] = x;
+          const xStage = x.stage || 0;
+          if (before) {
+            if (before.has(x.name)) {
+              before.delete(x.name);
+              continue;
+            }
+            if (before.size > 0) {
+              continue;
+            }
+          }
+          if (xStage > stage) {
+            continue;
+          }
+          i++;
+          break;
+        }
+        taps[i] = item;
+      }
+
+      insert({
+        name: "C",
+        before: ["B"],
+      });
+
+      console.log(taps);
+    </script>
+  </body>
+</html>
